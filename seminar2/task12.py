@@ -17,3 +17,13 @@ for x in range(sum_XY):
     if prod_XY == x * y:
         count += 1
         print(f"Вариант {count} :Х = {x}, a У = {y}")
+
+"""
+Эталонное решение
+"""
+x = int(input())
+y = int(input())
+for i in range(x):
+    for j in range(y):
+        if x == i + j and y == i * j:
+            print(i, j)

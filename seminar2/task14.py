@@ -8,3 +8,13 @@ while k <= number:
     print(f"Cтепень двойки: 2 ** {count} = {k}")
     k = k * 2
     count += 1
+
+"""
+Эталонное решение
+"""
+
+n = int(input())
+i = 0
+while 2 ** i <= n:
+    print(2 ** i)
+i += 1
