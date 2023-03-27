@@ -5,7 +5,6 @@
 A = 3; B = 5 -> 243 (3⁵)
     A = 2; B = 3 -> 8
 """
-
 numbers = int(input("Введите число: "))
 degree_number = int(input("Введите степень: "))
 

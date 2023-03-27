@@ -8,7 +8,6 @@
 numb_one = int(input("Введите первое число: "))
 numb_two = int(input("Введите второе число: "))
 
-
 def summa(numb_one, numb_two):
     if numb_one == 0:
         return numb_two
