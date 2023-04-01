@@ -15,3 +15,11 @@ for i in range(number_count):
     my_list.append(number_start)
     number_start += number_step
 print(my_list)
+
+# Эталон решения
+#
+# a1 = int(input())
+# d = int(input())
+# n = int(input())
+# for i in range(n):
+# print(a1 + i * d)
