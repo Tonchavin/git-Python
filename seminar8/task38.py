@@ -7,7 +7,7 @@ print('Меню тел.справочника: \n1 - Показать тел.с�
 
 
 def in_print_phone():
-    file_phone = open('phone.txt', 'r', encoding='UTF-8')
+    file_phone = open('F:\Less_CZN\git-Python\seminar8\phone.txt', 'r', encoding='UTF-8')
     phone = file_phone.read()
     print('Phone|            FIO         |Address|House|Corps|Room|')
     print('________________________________________________________')
@@ -26,13 +26,22 @@ def in_add_new_line_phone():
     file_phone.close()  # закрытие файла
 
 
-def in_fix_line_phone():
+# def in_fix_line_phone():
 
 
 def in_find_phone():
+    file_phone = open('F:\Less_CZN\git-Python\seminar8\phone.txt', 'r', encoding='UTF-8')
+    find_word = input('Введите поисковые данные: ')
+    phone = file_phone.readlines()
+    for in_find_word in phone:
+        if find_word in in_find_word:
+            print('          Phone|          FIO           |Address|House|Corps|Room|')
+            print('          ________________________________________________________')
+            print(f'Найдено: ', in_find_word)
+    file_phone.close()
 
 
-def in_del_line_phone():
+# def in_del_line_phone():
 
 
 number_main_phone = int(input('Введите нужную цифру: '))
