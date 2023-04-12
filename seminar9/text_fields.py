@@ -5,6 +5,8 @@ load_successful = 'Телефонная книга успешно загруже
 save_successful = 'Телефонная книга успешно сохранена'
 
 new_contact_successful = 'Контакт успешно создан!'
+find_contact_successful = 'Контакт успешно найден!'
+dont_find_contact = 'Контакт не найден'
 
 new_name = 'Введите имя контакта: '
 new_family = 'Введите фамилию контакта: '

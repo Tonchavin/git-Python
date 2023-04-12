@@ -36,3 +36,6 @@ def exit_pb() -> bool:
         return False
     else:
         return True
+
+
+def find_contact(contact: dict):

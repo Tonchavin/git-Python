@@ -57,3 +57,11 @@ def confirm(message: str) -> bool:
         return True
     else:
         return False
+
+
+# def find_contact() -> dict:
+#     print('Введите данные для поиска: ')
+#     name = input(txt.new_name)
+#     family = input(txt.new_family)
+#     print()
+#     return {'name': name, 'family': family}

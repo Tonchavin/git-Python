@@ -21,7 +21,9 @@ def start_pb():
                 model.add_contact(contact)
                 view.print_info(txt.new_contact_successful)
             case 5:
-                pass
+                contact = view.new_contact()
+                model.find_contact(contact)
+                # view.print_info(contact)
             case 6:
                 pass
             case 7:
