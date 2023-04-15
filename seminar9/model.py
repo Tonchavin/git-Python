@@ -1,41 +1,60 @@
 phone_book = []
-start_phone_book = []
+original_book = []
 PATH = 'F:\Less_CZN\git-Python\seminar9\phone_book.txt'
 
 
-def get_pb():
-    return phone_book
-
-
-def load_file():
-    global start_phone_book
+def open_file():
+    global original_book
+    phone_book.clear()
     with open(PATH, 'r', encoding='UTF-8') as file:
         data = file.readlines()
     for contact in data:
-        contact = contact.strip().split('|')
-        phone_book.append({'name': contact[0], 'family': contact[1], 'phone': contact[2], 'comment': contact[3]})
-    start_phone_book = phone_book.copy()
+        contact = contact.strip().split(';')
+        phone_book.append({'name': contact[0],
+                           'phone': contact[1],
+                           'comment': contact[2]})
+    original_book = phone_book.copy()
 
 
-def save_file():
-    data = []
+def save_file() -> None:
+    global original_book
+    save_book = []
     for contact in phone_book:
-        data.append('|'.join([value for value in contact.values()]))
-    data = '\n'.join(data)
+        save_book.append(';'.join(contact.values()))
+    data = '\n'.join(save_book)
     with open(PATH, 'w', encoding='UTF-8') as file:
         file.write(data)
+    original_book = phone_book.copy()
 
 
-def add_contact(contact: dict):
-    phone_book.append(contact)
+def get_phone_book() -> list[dict]:
+    return phone_book
 
 
-def exit_pb() -> bool:
-    global phone_book, start_phone_book
-    if phone_book == start_phone_book:
-        return False
-    else:
-        return True
+def add_contact(new_contact: dict[str, str]) -> None:
+    phone_book.append(new_contact)
 
 
-def find_contact(contact: dict):
+def find_contact(word: str) -> list[dict[str, str]]:
+    result = []
+    for contact in phone_book:
+        for field in contact.values():
+            print(field)
+            if word in field:
+                result.append(contact)
+                break
+    return result
+
+
+def edit_contact(edited_contact: tuple[int, dict[str, str]]) -> None:
+    index, contact = edited_contact
+    original_contact = phone_book.pop(index - 1)
+    contact = {'name': contact.get('name') if contact.get('name') else original_contact.get('name'),
+               'phone': contact.get('phone') if contact.get('phone') else original_contact.get('phone'),
+               'comment': contact.get('comment') if contact.get('comment') else original_contact.get('comment')}
+    phone_book.insert(index - 1, contact)
+
+
+def remove_contact(index: int) -> str:
+    deleted_element = phone_book.pop(index - 1)
+    return deleted_element.get('name')
