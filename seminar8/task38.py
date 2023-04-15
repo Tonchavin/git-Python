@@ -22,13 +22,13 @@ def in_print_phone():
 
 
 def in_add_new_line_phone():
-    file_phone = open('phone.txt', 'a', encoding='UTF-8')  # открытие в режиме записи
+    file_phone = open('phone.txt', 'a', encoding='UTF-8')
     new_line = input('Введите новую запись через пробел(Phone FIO Address House Corps Room): ').split()
     temp_line_start = "|".join(new_line[:1]) + str('|')
     temp_line_medium = " ".join(new_line[1:4]) + str('|')
     temp_line_end = "|".join(new_line[4:]) + str('|')
     temp_line = temp_line_start + temp_line_medium + temp_line_end
-    file_phone.write(f'\n{temp_line}')  # запись в файл с новой строки
+    file_phone.write(f'\n{temp_line}')
     file_phone.close()  # закрытие файла
 
 
@@ -56,7 +56,7 @@ def in_fix_line_phone():
     phone.remove(phone[index_line])
     phone.insert(index_line, temp_line + '\n')
     file_phone = open('F:\Less_CZN\git-Python\seminar8\phone.txt', 'w', encoding='UTF-8')
-    file_phone.write(''.join(map(str, phone)))  # запись в файл с новой строки
+    file_phone.write(''.join(map(str, phone)))
     file_phone.close()
 
 
@@ -89,7 +89,7 @@ def in_del_line_phone():
     print(phone[index_line])
     phone.remove(phone[index_line])
     file_phone = open('F:\Less_CZN\git-Python\seminar8\phone.txt', 'w', encoding='UTF-8')
-    file_phone.write(''.join(map(str, phone)))  # запись в файл с новой строки
+    file_phone.write(''.join(map(str, phone)))
     file_phone.close()
 
 
